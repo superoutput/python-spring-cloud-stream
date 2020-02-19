@@ -8,9 +8,9 @@ class WorkerPool:
         self._threads = dict()
 
     def add(self, microservice):
-        print('WorkerPool.add_task() : size %s' % len(self._threads))
-        print('Worker index : %s'%self._count)
-        self._threads[self._count] = Worker(microservice.run)
+        # print('WorkerPool.add_task() : size %s' % len(self._threads))
+        # print('Worker index : %s'%self._count)
+        self._threads[self._count] = Worker(microservice)
         self._threads[self._count].start()
         self._count+=1
 

@@ -1,7 +1,7 @@
 from microservice import Microservice
 from eventhandler import EventHandler
 from monitorables.monitorable import Monitorable
-from worker import Worker
+# from worker import Worker
 
 class BaseMicroservice( Microservice, EventHandler ):
     _count = 0
@@ -16,8 +16,8 @@ class BaseMicroservice( Microservice, EventHandler ):
             self._count+=1
 
     def add_listener(self, monitorable):
-        worker = Worker(monitorable.fire)
-        worker.start()
+        # worker = Worker(monitorable.fire)
+        # worker.start()
         self.subscribe(monitorable)
         self._monitorables.append(monitorable)
 

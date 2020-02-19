@@ -11,7 +11,7 @@ from monitorables.debugger import Debugger
 class Commander(Listener):
 
     def __init__(self):
-        print("Self: %s" % str(self))
+        # print("Self: %s" % str(self))
         self._microservices = []
         self.pool = WorkerPool()
 
