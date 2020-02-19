@@ -23,9 +23,11 @@ Python Spring Cloud Stream supports a variety of binder implementations and the 
     cli = Commander()
 
 #### Step3 Initail and register StreamSubscriber
-Like SpringApplication, *spring.config.location* is used very early to determine which files have to be loaded, so they must be defined as an environment property (typically an OS environment variable, a system property, or a command-line argument).
+Like SpringApplication, *spring.config.location* is used very early to determine which files have to be loaded, so it must be defined as an environment property (typically an OS environment variable, a system property, or a command-line argument).
 
-    subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:*{your-application.yml or your-application.properties}*')
+If *spring.config.location* contains directories (as opposed to files), they should end in / . Files specified in spring.config.location are used as-is, with no support for profile-specific variants, and are overridden by any profile-specific properties.
+
+    subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:{your-application-config}')
     cli.register(subscriber)
     
 ## Configuration File
@@ -36,11 +38,11 @@ It is also possible to configure the your Kafka consumer by using either *applic
         stream:
         bindings:
             input:
-                destination:  *your-topic*
+                destination:  {your-topic}
                 content-type: application/json
         kafka:
             binder:
-            zkNodes: *your-zookeeper-server*
-            brokers: *your-kafka-server*
+            zkNodes: {your-zookeeper-server}
+            brokers: {your-kafka-server}
 
 ![Class Diagram](https://github.com/superoutput/python-spring-cloud-stream/blob/master/documents/python-spring-cloud-stream_class_diagram.png)
