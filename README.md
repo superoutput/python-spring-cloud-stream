@@ -24,10 +24,13 @@ Python Spring Cloud Stream supports a variety of binder implementations and the 
 
 #### Step3 Initail and register StreamSubscriber
 Like SpringApplication, *spring.config.location* is used very early to determine which files have to be loaded, so they must be defined as an environment property (typically an OS environment variable, a system property, or a command-line argument).
+
     subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:*{your-application.yml or your-application.properties}*')
     cli.register(subscriber)
+    
 ## Configuration File
-It is also possible to configure the your Kafka consumer by using either application.properties or application.yml
+It is also possible to configure the your Kafka consumer by using either *application.properties* or *application.yml*
+
     spring:
     cloud:
         stream:
