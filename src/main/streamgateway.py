@@ -13,7 +13,7 @@ class StreamGateway(object):
     class Java:
         implements = ["io.hms.mda.stream.spring.python.PythonCallback"]
 
-    def start(self, *args):
+    def start(self, args):
         # print('Arguments length = ', len(args))
         gw_args = ['java', '-jar', '../resources/lib/spring-cloud-stream-gateway-0.1.1.jar', '-noverify', '-XX:TieredStopAtLevel=1', '-Dspring.jmx.enabled=false']
         # print(gw_args)

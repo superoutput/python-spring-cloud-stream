@@ -8,7 +8,7 @@ from py4j.java_gateway import JavaGateway, java_import, CallbackServerParameters
 
 
 class StreamSubscriber(BaseMicroservice):
-    def __init__(self, callback, args):
+    def __init__(self, callback, *args):
         super().__init__()
         self.callback = callback
         self.args = args

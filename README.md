@@ -23,15 +23,17 @@ Python Spring Cloud Stream supports a variety of binder implementations and the 
     cli = Commander()
 
 #### Step3 Initail and register StreamSubscriber
-Like SpringApplication, *spring.config.location* is used very early to determine which files have to be loaded, so it must be defined as an environment property (typically an OS environment variable, a system property, or a command-line argument).
+Like SpringApplication, *spring.config.location* is used very early to determine which files mandatory to be loaded, so it must be defined as an environment property .
 
-If *spring.config.location* contains directories (as opposed to files), they should end in / . Files specified in spring.config.location are used as-is, with no support for profile-specific variants, and are overridden by any profile-specific properties.
+If *spring.config.location* contains directories (as opposed to files), they should end in / . Files specified in *spring.config.location* are used as-is, with no support for profile-specific variants, and are overridden by any profile-specific properties.
 
-    subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:{your-application-config}')
+The second property, *spring.kafka.consumer.auto-offset-reset* ensures the new consumer group gets the messages we sent, because the container might start after the sends have completed.
+
+    subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:{your-application-config}', '--spring.kafka.consumer.auto-offset-reset=earliest')
     cli.register(subscriber)
     
 ## Configuration File
-It is also possible to configure the your Kafka consumer by using either *application.properties* or *application.yml*
+It is also possible to configure your Kafka consumer by using either *application.properties* or *application.yml*
 
     spring:
     cloud:

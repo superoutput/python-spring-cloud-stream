@@ -8,7 +8,7 @@ def onMessage(message):
 if __name__ == "__main__":
     try:
         cmd = Commander()
-        subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:../resources/application.yml')
+        subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:../resources/application.yml', '--spring.kafka.consumer.auto-offset-reset=earliest')
         # debugger = Debugger(subscriber, 'monitorables/%s_debugger.out' % subscriber)
         # subscriber.add_listener(debugger)
         cmd.register(subscriber)
