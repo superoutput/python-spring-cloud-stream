@@ -13,16 +13,16 @@ Python Spring Cloud Stream supports a variety of binder implementations and the 
 
 # Apache Kafka
 ## Publish/read messages from the Kafka topic
-#### Step1 Create callback function:
+#### Step 1 Create callback function:
     def onMessage(message):
         # TODO implement this method
         #  For example
         print('New Message :', message)
 
-#### Step2 Use Commander class as CLI
-    cli = Commander()
+#### Step 2 Use ServiceMager class as CLI
+    cli = ServiceManager()
 
-#### Step3 Initail and register StreamSubscriber
+#### Step 3 Initail and register StreamSubscriber
 Like SpringApplication, *spring.config.location* is used very early to determine which files mandatory to be loaded, so it must be defined as an environment property .
 
 If *spring.config.location* contains directories (as opposed to files), they should end in / . Files specified in *spring.config.location* are used as-is, with no support for profile-specific variants, and are overridden by any profile-specific properties.
@@ -31,7 +31,22 @@ The second property, *spring.kafka.consumer.auto-offset-reset* ensures the new c
 
     subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:{your-application-config}', '--spring.kafka.consumer.auto-offset-reset=earliest')
     cli.register(subscriber)
-    
+
+#### Full example code using callback function
+    from spring.streamsubscriber import StreamSubscriber
+    from monitorables.debugger import Debugger
+
+    def onMessage(message):
+        print('New Message :', message)
+
+    if __name__ == "__main__":
+        try:
+            subscriber = StreamSubscriber(onMessage, '--spring.config.location=file:../resources/application.yml', '--spring.kafka.consumer.auto-offset-reset=earliest')
+        except KeyboardInterrupt:
+            print('Stop streaming')
+        except (SyntaxError, NameError) as e:
+            print(e)
+
 ## Configuration File
 It is also possible to configure your Kafka consumer by using either *application.properties* or *application.yml*
 

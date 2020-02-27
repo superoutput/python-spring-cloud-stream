@@ -1,4 +1,4 @@
-from listener import Listener
+from monitor.listener import Listener
 
 class Monitorable(Listener):
     def __init__(self, microservice):

@@ -12,7 +12,7 @@ class PythonListener(object):
         return "A Return Value"
 
     class Java:
-        implements = ["io.hms.mda.stream.spring.python.PythonCallback"]
+        implements = ["spring.cloud.stream.python.PythonCallback"]
 
 if __name__ == "__main__":
     try:

@@ -96,7 +96,7 @@
 
         "ERROR_USERNAME_PASSWORD_INCORRECT": "Username or password is incorrect",
         "ERROR_USER_NOT_ALLOWED": "User is not allowed by application",
-        "DYNAMIC_INFO_REGISTER_NEW": "Register as new AAS user",
+        "DYNAMIC_INFO_REGISTER_NEW": "Register as new IAS user",
         "DYNAMIC_INFO_REGISTER_HIS": "Register as new HIS user",
         "DYNAMIC_INFO_REGISTER_LDAP": "Register as new LDAP user",
         "DYNAMIC_INFO_USER_CREATED": "User '{0}' created",
@@ -112,7 +112,7 @@
         "DYNAMIC_INFO_FORCE_LOGOUT_USER": "Force logout user '{0}'",
         "DYNAMIC_INFO_FORCE_LOGOUT_APP": "Force logout app '{0}'",
         "DYNAMIC_WARN_PARAM_SHOULD_NOT_EMPTY": "Parameter {0} should not be empty",
-        "DYNAMIC_ERROR_AAS_NOT_ACTIVE": "AAS user '{0}' does not active in this app/role",
+        "DYNAMIC_ERROR_IAS_NOT_ACTIVE": "IAS user '{0}' does not active in this app/role",
         "DYNAMIC_ERROR_HIS_NOT_EXISTS": "HIS user '{0}' does not exist",
         "DYNAMIC_ERROR_HIS_ACCESS_DENIED": "HIS user '{0}' access denied",
         "DYNAMIC_ERROR_LDAP_NOT_EXISTS": "LDAP user '{0}' does not exist",
@@ -133,10 +133,10 @@
         "DYNAMIC_ERROR_NO_USERNAME": "Username doesn't exist. {0}",
         "DYNAMIC_ERROR_PAGE_OUT_OF_RANGE": "Page '{0}' out of range"
     },
-    "HMS_AAS": {
+    "HMS_IAS": {
         "ERROR_USERNAME_PASSWORD_INCORRECT": "Username or password is incorrect",
         "ERROR_USER_NOT_ALLOWED": "User is not allowed by application",
-        "DYNAMIC_INFO_REGISTER_NEW": "Register as new AAS user",
+        "DYNAMIC_INFO_REGISTER_NEW": "Register as new IAS user",
         "DYNAMIC_INFO_REGISTER_HIS": "Register as new HIS user",
         "DYNAMIC_INFO_REGISTER_LDAP": "Register as new LDAP user",
         "DYNAMIC_INFO_USER_CREATED": "User '{0}' created",
@@ -152,7 +152,7 @@
         "DYNAMIC_INFO_FORCE_LOGOUT_USER": "Force logout user '{0}'",
         "DYNAMIC_INFO_FORCE_LOGOUT_APP": "Force logout app '{0}'",
         "DYNAMIC_WARN_PARAM_SHOULD_NOT_EMPTY": "Parameter {0} should not be empty",
-        "DYNAMIC_ERROR_AAS_NOT_ACTIVE": "AAS user '{0}' does not active in this app/role",
+        "DYNAMIC_ERROR_IAS_NOT_ACTIVE": "IAS user '{0}' does not active in this app/role",
         "DYNAMIC_ERROR_HIS_NOT_EXISTS": "HIS user '{0}' does not exist",
         "DYNAMIC_ERROR_HIS_ACCESS_DENIED": "HIS user '{0}' access denied",
         "DYNAMIC_ERROR_LDAP_NOT_EXISTS": "LDAP user '{0}' does not exist",

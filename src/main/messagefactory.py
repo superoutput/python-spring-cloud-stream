@@ -1,6 +1,6 @@
 import json, os
 from enum import Enum
-from .message import Message
+from spring.message import Message
 from aenum import extend_enum
 import hmsutils._global_var as _global_var
 

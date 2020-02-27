@@ -15,8 +15,7 @@ from py4j.clientserver import ClientServer, JavaParameters, PythonParameters
 gateway = JavaGateway(callback_server_parameters=CallbackServerParameters())
 #gateway = ClientServer(java_parameters=JavaParameters(), python_parameters=PythonParameters())
 
-# java_import(gateway.jvm, 'io.hms.mda.stream.spring.*')
-java_import(gateway.jvm, 'io.hms.mda.stream.spring.python.*')
+java_import(gateway.jvm, 'spring.cloud.stream.python.*')
 
 class PythonCallbackImpl(object):
     def __init__(self, execfunc):
@@ -26,7 +25,7 @@ class PythonCallbackImpl(object):
         self.execfunc()
         return 'dummy return value'
     class Java:
-        implements = ["io.hms.mda.stream.spring.python.PythonCallback"]
+        implements = ["spring.cloud.stream.python.PythonCallback"]
 
 def simple_fun():
     print('[simple_fun] called')
